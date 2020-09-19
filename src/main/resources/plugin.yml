@@ -1,6 +1,6 @@
-name: Hat
+name: Hats
 version: @version@
-main: com.paraduction.hat.Hat
+main: com.paraduction.hat.Hats
 api-version: 1.16
 authors: [Noth]
 description: A simple hat plugin for spigot!
