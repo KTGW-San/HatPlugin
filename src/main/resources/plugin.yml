@@ -1,7 +1,11 @@
-name: HatPlugin
+name: Hat
 version: @version@
 main: com.paraduction.hat.Hat
 api-version: 1.16
 authors: [Noth]
 description: A simple hat plugin for spigot!
-website: paraduction.com
+website: github.com/KTGW-San/HatPlugin
+commands:
+  hat:
+    usage: /hat <arguments>
+    description: Just simple command uwu
