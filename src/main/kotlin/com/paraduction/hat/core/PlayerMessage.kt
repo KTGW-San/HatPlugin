@@ -5,7 +5,7 @@ import org.bukkit.ChatColor
 import org.bukkit.entity.Player
 
 object PlayerMessage {
-    private val displayPrefix = ChatColor.BOLD.toString() + "[DLP]"
+    private val displayPrefix = ChatColor.BOLD.toString() + "[Hats]"
 
     fun send(content: String?, player: Player, attachDisplayPrefix: Boolean) {
         val builder = StringBuilder()

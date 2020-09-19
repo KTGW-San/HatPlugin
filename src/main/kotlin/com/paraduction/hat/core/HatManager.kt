@@ -1,6 +1,7 @@
 package com.paraduction.hat.core
 
 import com.paraduction.hat.core.yaml.YamlConfigurator
+import org.bukkit.ChatColor
 import org.bukkit.Material
 import org.bukkit.configuration.InvalidConfigurationException
 import org.bukkit.configuration.file.YamlConfiguration
@@ -14,17 +15,27 @@ class HatManager {
 
     fun openGUI(player: Player) {}
 
-    fun giveItemHat(name: String, player: Player) {
+    fun wear(name: String, player: Player) {
         if (hatProfiler.builder!!.isExists(name)) {
             val config: YamlConfiguration? = hatProfiler.config
             val displayName = config?.getString(name + separator + "displayName")!!
             val material = config.getString(name + separator + "item")!!
             val modelData = config.getInt(name + separator + "data")
 
-            player.sendMessage("あげる<3")
             player.inventory.helmet = itemStackBuilder(displayName, material, modelData)
+            PlayerMessage.send("Give to you <3", player, ChatColor.GREEN, true)
         } else {
-            player.sendMessage("Hatエントリーが見つかりません")
+            PlayerMessage.send("Hat entry didn't find ! :(", player, ChatColor.RED, true)
+        }
+    }
+
+    fun reload() {
+        try {
+            hatProfiler.reload()
+        } catch (e: IOException) {
+            e.printStackTrace()
+        } catch (e: InvalidConfigurationException) {
+            e.printStackTrace()
         }
     }
 
@@ -43,15 +54,5 @@ class HatManager {
         itemMeta.setCustomModelData(modelData)
         itemStack.itemMeta = itemMeta
         return itemStack
-    }
-
-    fun reload() {
-        try {
-            hatProfiler.reload()
-        } catch (e: IOException) {
-            e.printStackTrace()
-        } catch (e: InvalidConfigurationException) {
-            e.printStackTrace()
-        }
     }
 }

@@ -6,6 +6,6 @@ authors: [Noth]
 description: A simple hat plugin for spigot!
 website: github.com/KTGW-San/HatPlugin
 commands:
-  hat:
-    usage: /hat <arguments>
+  hats:
+    usage: /hats <arguments>
     description: Just simple command uwu

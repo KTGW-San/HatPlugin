@@ -5,7 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin
 
 class Hats : JavaPlugin() {
     override fun onEnable() {
-        this.server.getPluginCommand("hat")?.setExecutor(CommandListener())
+        this.server.getPluginCommand("hats")?.setExecutor(CommandListener())
     }
 
     override fun onDisable() {
