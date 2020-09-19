@@ -1,0 +1,7 @@
+name: HatPlugin
+version: @version@
+main: com.paraduction.hat.Hat
+api-version: 1.16
+authors: [Noth]
+description: A simple hat plugin for spigot!
+website: paraduction.com
