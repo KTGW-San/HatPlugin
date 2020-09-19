@@ -1,4 +1,4 @@
-package com.paraduction.hat.core.listener
+package com.paraduction.hat.listener
 
 import org.bukkit.event.Listener
 

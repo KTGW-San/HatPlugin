@@ -1,7 +1,7 @@
 package com.paraduction.hat.core
 
-import com.paraduction.hat.yaml.YamlBuilder
-import com.paraduction.hat.yaml.YamlConfigurator
+import com.paraduction.hat.core.yaml.YamlBuilder
+import com.paraduction.hat.core.yaml.YamlConfigurator
 import org.bukkit.Bukkit
 import org.bukkit.configuration.InvalidConfigurationException
 import org.bukkit.configuration.file.YamlConfiguration

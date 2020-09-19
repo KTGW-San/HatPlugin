@@ -1,6 +1,6 @@
 package com.paraduction.hat
 
-import com.paraduction.hat.core.commands.CommandListener
+import com.paraduction.hat.commands.CommandListener
 import org.bukkit.plugin.java.JavaPlugin
 
 class Hats : JavaPlugin() {

@@ -1,9 +1,7 @@
-package com.paraduction.hat.core.commands
+package com.paraduction.hat.commands
 
 import com.paraduction.hat.core.HatManager
-import com.paraduction.hat.core.HatProfiler
 import com.paraduction.hat.core.PlayerMessage
-import com.paraduction.hat.yaml.YamlConfigurator
 import org.bukkit.ChatColor
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor

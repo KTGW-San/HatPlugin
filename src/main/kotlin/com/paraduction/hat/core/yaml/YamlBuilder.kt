@@ -1,10 +1,8 @@
-package com.paraduction.hat.yaml
+package com.paraduction.hat.core.yaml
 
 import org.bukkit.Bukkit
-import org.bukkit.configuration.InvalidConfigurationException
 import org.bukkit.configuration.file.YamlConfiguration
 import java.io.File
-import java.io.IOException
 import java.io.Serializable
 import java.util.logging.Level
 

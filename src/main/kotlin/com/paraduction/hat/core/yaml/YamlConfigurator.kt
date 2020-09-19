@@ -1,9 +1,7 @@
-package com.paraduction.hat.yaml
+package com.paraduction.hat.core.yaml
 
-import org.bukkit.configuration.InvalidConfigurationException
 import org.bukkit.configuration.file.YamlConfiguration
 import org.bukkit.entity.Player
-import java.io.IOException
 
 abstract class YamlConfigurator {
     open var config: YamlConfiguration? = null
