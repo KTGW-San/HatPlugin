@@ -41,8 +41,11 @@ class CommandListener : CommandExecutor {
         return false
     }
 
-    private val helpString:String = "----------Hats v0.0.1----------\n" +
+    private val helpString:String = "----------Hats v1.0.0----------\n" +
                                     "/hats help : Sends HelpMessage(This!)\n" +
+                                    "/hats reload : Reload hat entry\n" +
                                     "/hats wear [name] : Attach hat on your head!\n" +
-                                    "/hats reload : Reload hat entry"
+                                    "/hats gui : Open Hat selection GUI\n" +
+                                    "/hats : Open Hat selection GUI(too!)"
+
 }
