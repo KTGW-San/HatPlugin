@@ -39,13 +39,11 @@ class HatManager {
         //コンフィグ、パスの初期化
         val config: YamlConfiguration? = hatProfiler.config
         val path = pathBuilder(root,name)
-
         //データの定義
         val displayName = config?.getString(path + "displayName")!!
         val material = config.getString(path + "item")!!
         val modelData = config.getInt(path + "data")
         val lore = config.getStringList(path + "lore")
-
         //Any型のリストを返す
         return listOf(displayName,material,modelData,lore)
     }
@@ -73,18 +71,15 @@ class HatManager {
 
     fun openGUI(player: Player) {
         val view = player.openInventory(gui.init(player))
-
         hatProfiler.config?.getConfigurationSection(root)?.getKeys(false)?.forEach {
             view?.topInventory?.addItem(get(it))
         }
-
         PlayerMessage.send("Opening GUI ${view?.title}", player, ChatColor.GREEN, true)
     }
 
     fun reload(): Boolean {
         kotlin.runCatching {
             hatProfiler.reload()
-
         }.fold(
                 onSuccess = { return true },
                 onFailure = {
