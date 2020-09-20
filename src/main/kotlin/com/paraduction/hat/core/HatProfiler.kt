@@ -9,6 +9,7 @@ import java.io.File
 import java.io.IOException
 import java.util.*
 
+@Suppress("UNUSED_PARAMETER")
 class HatProfiler : YamlConfigurator() {
     private val dataDirectory: String
     override var builder: YamlBuilder? = null

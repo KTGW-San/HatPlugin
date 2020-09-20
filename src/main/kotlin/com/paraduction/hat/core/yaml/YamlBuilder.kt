@@ -22,6 +22,7 @@ class YamlBuilder : Serializable {
         }
     }
 
+    /*
     fun addEntry(config: YamlConfiguration): Boolean {
         return if (file != null) {
             config.addDefaults(config)
@@ -32,6 +33,7 @@ class YamlBuilder : Serializable {
             false
         }
     }
+    */
 
     fun load(file: File): YamlBuilder {
         Bukkit.getLogger().log(Level.INFO, "Loading Config")
