@@ -13,7 +13,7 @@ class CommandListener : CommandExecutor {
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
         val player = sender as Player
-        if(label.equals("hats", true)) {
+        if(label.equals("hats", true) and (args.isNotEmpty())) {
             when(args[0]) {
                 "help" -> { PlayerMessage.send(helpString, player, ChatColor.GOLD, false) }
                 "wear" -> {
@@ -29,10 +29,13 @@ class CommandListener : CommandExecutor {
                     if(hatProfiler.reload()) {
                         PlayerMessage.send("Reloaded successfully", player, ChatColor.GREEN, true)
                     } else {
-                        PlayerMessage.send("Something occurred", player, ChatColor.RED, true)
+                        PlayerMessage.send("Something occurred :( printing stacktrace at console", player, ChatColor.RED, true)
                     }
                 }
             }
+            return true;
+        } else if(label.equals("hats", true)) {
+            hatProfiler.openGUI(player)
             return true;
         }
         return false
