@@ -23,11 +23,11 @@ class CommandListener : CommandExecutor {
                         PlayerMessage.send("Please specify the hat name!", player, ChatColor.RED, true)
                     }
                 }
+                "gui" -> { hatProfiler.openGUI(player) }
                 "reload" -> {
                     PlayerMessage.send("Executing Reload...", player, ChatColor.GREEN, true)
                     hatProfiler.reload()
                 }
-                else -> { }
             }
             return true;
         }
