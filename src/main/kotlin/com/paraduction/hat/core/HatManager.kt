@@ -1,8 +1,11 @@
 package com.paraduction.hat.core
 
+import com.google.common.collect.Multimap
 import com.paraduction.hat.core.yaml.YamlConfigurator
 import org.bukkit.ChatColor
 import org.bukkit.Material
+import org.bukkit.attribute.Attribute
+import org.bukkit.attribute.AttributeModifier
 import org.bukkit.configuration.InvalidConfigurationException
 import org.bukkit.configuration.file.YamlConfiguration
 import org.bukkit.entity.Player
