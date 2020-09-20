@@ -26,7 +26,11 @@ class CommandListener : CommandExecutor {
                 "gui" -> { hatProfiler.openGUI(player) }
                 "reload" -> {
                     PlayerMessage.send("Executing Reload...", player, ChatColor.GREEN, true)
-                    hatProfiler.reload()
+                    if(hatProfiler.reload()) {
+                        PlayerMessage.send("Reloaded successfully", player, ChatColor.GREEN, true)
+                    } else {
+                        PlayerMessage.send("Something occurred", player, ChatColor.RED, true)
+                    }
                 }
             }
             return true;

@@ -81,13 +81,16 @@ class HatManager {
         PlayerMessage.send("Opening GUI ${view?.title}", player, ChatColor.GREEN, true)
     }
 
-    fun reload() {
-        try {
+    fun reload(): Boolean {
+        kotlin.runCatching {
             hatProfiler.reload()
-        } catch (e: IOException) {
-            e.printStackTrace()
-        } catch (e: InvalidConfigurationException) {
-            e.printStackTrace()
-        }
+
+        }.fold(
+                onSuccess = { return true },
+                onFailure = {
+                    it.printStackTrace()
+                    return false
+                }
+        )
     }
 }
