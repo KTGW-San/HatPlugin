@@ -13,7 +13,7 @@ class CommandListener : CommandExecutor {
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
         val player = sender as Player
-        if(label.equals("hats", true)) {
+        if(label.equals("hats", true) and (args.isNotEmpty())) {
             when(args[0]) {
                 "help" -> { PlayerMessage.send(helpString, player, ChatColor.GOLD, false) }
                 "wear" -> {
@@ -26,16 +26,26 @@ class CommandListener : CommandExecutor {
                 "gui" -> { hatProfiler.openGUI(player) }
                 "reload" -> {
                     PlayerMessage.send("Executing Reload...", player, ChatColor.GREEN, true)
-                    hatProfiler.reload()
+                    if(hatProfiler.reload()) {
+                        PlayerMessage.send("Reloaded successfully", player, ChatColor.GREEN, true)
+                    } else {
+                        PlayerMessage.send("Something occurred :( printing stacktrace at console", player, ChatColor.RED, true)
+                    }
                 }
             }
+            return true;
+        } else if(label.equals("hats", true)) {
+            hatProfiler.openGUI(player)
             return true;
         }
         return false
     }
 
-    private val helpString:String = "----------Hats v0.0.1----------\n" +
+    private val helpString:String = "----------Hats v1.0.0----------\n" +
                                     "/hats help : Sends HelpMessage(This!)\n" +
+                                    "/hats reload : Reload hat entry\n" +
                                     "/hats wear [name] : Attach hat on your head!\n" +
-                                    "/hats reload : Reload hat entry"
+                                    "/hats gui : Open Hat selection GUI\n" +
+                                    "/hats : Open Hat selection GUI(too!)"
+
 }
