@@ -47,5 +47,4 @@ class CommandListener : CommandExecutor {
                                     "/hats wear [name] : Attach hat on your head!\n" +
                                     "/hats gui : Open Hat selection GUI\n" +
                                     "/hats : Open Hat selection GUI(too!)"
-
 }

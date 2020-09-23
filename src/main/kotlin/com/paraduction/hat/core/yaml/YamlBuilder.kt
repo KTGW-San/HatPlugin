@@ -22,19 +22,6 @@ class YamlBuilder : Serializable {
         }
     }
 
-    /*
-    fun addEntry(config: YamlConfiguration): Boolean {
-        return if (file != null) {
-            config.addDefaults(config)
-            Bukkit.getLogger().log(Level.INFO, "Saved.")
-            true
-        } else {
-            Bukkit.getLogger().log(Level.WARNING, "Failed to save yaml config. aborting.")
-            false
-        }
-    }
-    */
-
     fun load(file: File): YamlBuilder {
         Bukkit.getLogger().log(Level.INFO, "Loading Config")
         this.file = file

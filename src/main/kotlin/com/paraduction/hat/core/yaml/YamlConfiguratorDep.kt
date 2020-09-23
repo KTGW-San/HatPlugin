@@ -3,7 +3,7 @@ package com.paraduction.hat.core.yaml
 import org.bukkit.configuration.file.YamlConfiguration
 import org.bukkit.entity.Player
 
-abstract class YamlConfigurator {
+abstract class YamlConfiguratorDep {
     open var config: YamlConfiguration? = null
 
     open fun YamlConfigurator() {

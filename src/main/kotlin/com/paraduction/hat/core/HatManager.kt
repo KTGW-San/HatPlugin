@@ -1,27 +1,22 @@
 package com.paraduction.hat.core
 
-import com.google.common.collect.Multimap
-import com.paraduction.hat.core.yaml.YamlConfigurator
+import com.paraduction.hat.core.yaml.YamlConstructor
 import org.bukkit.ChatColor
 import org.bukkit.Material
-import org.bukkit.attribute.Attribute
-import org.bukkit.attribute.AttributeModifier
-import org.bukkit.configuration.InvalidConfigurationException
 import org.bukkit.configuration.file.YamlConfiguration
 import org.bukkit.entity.Player
 import org.bukkit.inventory.ItemStack
-import java.io.IOException
 
 @Suppress("UNCHECKED_CAST")
 class HatManager {
     private val gui = GUIManager()
-    private val hatProfiler: YamlConfigurator = HatProfiler()
+    private val hatProfiler = HatProfiler("Hats", "hats", ".yml")
     private val separator = '.'
     private val root = "hats"
 
     //HatのItemStackを取得する
     private fun get(name: String): ItemStack {
-        if (hatProfiler.builder!!.isExists(root + separator + name)) {
+        if (hatProfiler.builder.isExists(root + separator + name)) {
             val data:List<*> = getData(name)
             return itemBuilder(data[0] as String, data[1] as String, data[2] as Int, data[3] as List<String>)
         }
@@ -29,7 +24,7 @@ class HatManager {
     }
 
     fun wear(name: String, player: Player) {
-        if (hatProfiler.builder!!.isExists(name)) {
+        if (hatProfiler.builder.isExists(name)) {
             val data:List<*> = getData(name)
             player.inventory.helmet = itemBuilder(data[0] as String, data[1] as String, data[2] as Int, data[3] as List<String>)
             PlayerMessage.send("Give to you <3", player, ChatColor.GREEN, true)
